@@ -65,5 +65,8 @@ func FeeForSerializeSize(relayFeePerKb btcutil.Amount, txSerializeSize int) btcu
 		fee = btcutil.MaxSatoshi
 	}
 
+	// todo ppc
+	fee = btcutil.Amount(txSerializeSize * (10000 / 1000))
+
 	return fee
 }
